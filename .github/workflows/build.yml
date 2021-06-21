@@ -104,8 +104,8 @@ jobs:
           build/*.msi
 
   macos-build:
-    runs-on: macos-11.0
-    name: 🍎 macOS 11.0
+    runs-on: macos-10.15
+    name: 🍎 macOS 10.15
     steps:
 
     - name: 🧰 Checkout
@@ -125,7 +125,7 @@ jobs:
         CC=$(brew --prefix llvm)/bin/clang \
         CXX=$(brew --prefix llvm)/bin/clang++ \
         PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig":"$(brew --prefix)/lib/pkgconfig" \
-        MACOSX_DEPLOYMENT_TARGET="10.15" \
+        MACOSX_DEPLOYMENT_TARGET="10.14" \
         cmake \
           -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
           -DCREATE_BUNDLE=ON \
